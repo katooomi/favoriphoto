@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @collections.each do |collection| %>
+    <div class="content_post" style="background-image: url(<%= collection.image %>);">
+      <p><%= collection.tweet %></p>
+      <span class="name">
+        <%# <%= collrection.user %> 
+      </span>
+    </div>
+  <% end %>
+</div>

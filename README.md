@@ -16,7 +16,7 @@
 |----------------|------------|-------------|
 | like           |            |             |
 | user           | references |             |
-| prototype      | references |             |
+| collection     | references |             |
 
 
 ## collections テーブル
