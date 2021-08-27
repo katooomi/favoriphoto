@@ -1,10 +1,16 @@
 <div class="contents row">
   <% @collections.each do |collection| %>
-    <div class="content_post" style="background-image: url(<%= collection.image %>);">
+    <div class="content_post" ><%= image_tag collection.image %>
       <p><%= collection.tweet %></p>
-      <span class="name">
-        <%# <%= collrection.user %> 
-      </span>
+      <h1>いいね♡件数: <%= collection.likes.count %></h1> 
+    <% if current_user.already_liked?(collection) %>
+      <%= link_to 'いいねを取り消す', collection_like_path(@collection), method: :delete %>
+    <% else %>
+      <%# <%= link_to 'いいね', collections_path(@collection),method: :post %> 
+      <a data-method="post" href="/collections">いいね</a>
+    <% end %>
+      <span class="name"></span>
+        <%= collection.user.nickname %>
     </div>
   <% end %>
 </div>
