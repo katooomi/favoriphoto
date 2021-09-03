@@ -4,7 +4,7 @@ class LikesController < ApplicationController
    @like = current_user.likes.create(collection_id: params[:collection_id])
    redirect_to root_path
   end
-　　
+
   def destroy
     @like = Like.find_by(controller_id: params[:collection_id], user_id: current_user.id)
     @like.destroy
