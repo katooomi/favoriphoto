@@ -3,7 +3,7 @@
     <div class="content_post" ><%= image_tag collection.image %>
      <div class="middle_post">
       <h1><%= collection.tweet %></h1>
-      <h1>いいね♡件数: <%= collection.likes.count %></h1> 
+      <h1>いいね件数: <%= collection.likes.count %></h1> 
     <% if current_user.already_liked?(collection) %>
       <%= link_to 'いいねを取り消す', collection_like_path(@collection), method: :delete %>
     <% else %>
